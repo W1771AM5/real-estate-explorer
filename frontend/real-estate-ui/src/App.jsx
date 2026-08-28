@@ -6,6 +6,7 @@ import { useState } from 'react';
 function App() {
 
   const [searchTerm, setSearchTerm] = useState ('');
+  const [propiedadSeleccionada, setPropiedadSeleccionada] = useState(null);
   
   const propiedades = [
     {
@@ -124,13 +125,51 @@ function App() {
                     <span>📐 {prop.area}</span>
                   </div>
                   <p className="property-city">📍 {prop.ciudad}</p>
-                  <button className="view-button">Ver detalles</button>
+                  <button className="view-button"
+                          onClick={() => setPropiedadSeleccionada(prop)}>Ver detalles</button>
                 </div>
               </div>
             ))}
           </div>
         </section>
       </main>
+    
+      {propiedadSeleccionada && (
+        <div className="modal-overlay" onClick={() => setPropiedadSeleccionada(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setPropiedadSeleccionada(null)}>
+              &times;
+            </button>
+            
+            <div className="modal-image">
+              <span className="property-icon-large">{propiedadSeleccionada.imagen}</span>
+            </div>
+            
+            <h2>{propiedadSeleccionada.titulo}</h2>
+            <p className="modal-price">{propiedadSeleccionada.precio}</p>
+            
+            <div className="modal-details">
+              <div className="detail-item">
+                <span>🛏️ Habitaciones</span>
+                <strong>{propiedadSeleccionada.habitaciones}</strong>
+              </div>
+              <div className="detail-item">
+                <span>🛁 Baños</span>
+                <strong>{propiedadSeleccionada.banos}</strong>
+              </div>
+              <div className="detail-item">
+                <span>📐 Área</span>
+                <strong>{propiedadSeleccionada.area}</strong>
+              </div>
+            </div>
+
+            <p className="modal-location">📍 {propiedadSeleccionada.ciudad}</p>
+            
+            <button className="contact-button">Contactar al agente</button>
+          </div>
+        </div>
+      )}
+      
       <Footer />
     </div>
   );
