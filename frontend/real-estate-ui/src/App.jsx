@@ -1,8 +1,11 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
-import './App.css';
+import './App.css'; 
+import { useState } from 'react';
 
 function App() {
+
+  const [searchTerm, setSearchTerm] = useState ('');
   
   const propiedades = [
     {
@@ -67,6 +70,11 @@ function App() {
     }
   ];
 
+  const propiedadesFiltradas = propiedades.filter((prop) => {
+    return prop.ciudad.toLowerCase().includes(searchTerm.toLowerCase()) ||
+           prop.titulo.toLowerCase().includes(searchTerm.toLowerCase())
+  });
+
   return (
     <div className="app">
       <Header />
@@ -80,8 +88,11 @@ function App() {
                 type="text" 
                 placeholder="Buscar por ciudad, zona o código postal..."
                 className="search-input"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <button className="search-button">🔍 Buscar</button>
+              <button className="search-button"
+              onClick={() => console.log('Buscando:', searchTerm)}>🔍 Buscar</button>
             </div>
           </div>
         </section>
@@ -91,9 +102,15 @@ function App() {
             <h2>🏠 Propiedades destacadas</h2>
             <p>Las mejores opciones para ti</p>
           </div>
+          
+          {propiedadesFiltradas.length === 0 && (
+            <p style={{ textAlign: 'center', marginTop: '20px', color: '#666' }}>
+            No se encontraron propiedades para "{searchTerm}"
+            </p>
+          )}
 
           <div className="properties-grid">
-            {propiedades.map((prop) => (
+            {propiedadesFiltradas.map((prop) => (
               <div key={prop.id} className="property-card">
                 <div className="property-image">
                   <span className="property-icon">{prop.imagen}</span>
