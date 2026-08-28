@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xgQJcOYFog8=",
+  "dgSpecHash": "BlGDJhk53rk=",
   "success": true,
-  "projectFilePath": "E:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
+  "projectFilePath": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kerwi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
     "C:\\Users\\kerwi\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512"
