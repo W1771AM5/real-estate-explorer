@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {}
+    "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {}
   },
   "projects": {
-    "E:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {
+    "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
+        "projectUniqueName": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
         "projectName": "RealEstate.Api",
-        "projectPath": "E:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
+        "projectPath": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
         "packagesPath": "C:\\Users\\kerwi\\.nuget\\packages\\",
-        "outputPath": "E:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\obj\\",
+        "outputPath": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "E:\\RE-Explorer\\real-estate-explorer\\NuGet.Config",
+          "e:\\RE-Explorer\\real-estate-explorer\\NuGet.Config",
           "C:\\Users\\kerwi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

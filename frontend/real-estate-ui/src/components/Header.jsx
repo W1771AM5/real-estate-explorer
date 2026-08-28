@@ -1,14 +1,20 @@
-function Header() {
+import './layout/Header.css';
+
+const Header = () => {
   return (
-    <header>
-      <h1>🏠 Real Estate Explorer</h1>
-      <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Buscar</a>
-        <a href="#">Dashboard</a>
+    <header className="header">
+      <div className="logo">
+        <span className="logo-icon">🏠</span>
+        <span className="logo-text">Real Estate Explorer</span>
+      </div>
+      <nav className="nav-links">
+        <a href="#" className="nav-link active">Inicio</a>
+        <a href="#" className="nav-link">Buscar</a>
+        <a href="#" className="nav-link">Dashboard</a>
+        <a href="#" className="nav-link login-btn">Iniciar sesión</a>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;
