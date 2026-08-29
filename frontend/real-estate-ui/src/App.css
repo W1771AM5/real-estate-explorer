@@ -93,8 +93,9 @@ body {
 
 .properties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
 }
 
 .property-card {

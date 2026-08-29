@@ -2,27 +2,20 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
-
 import Search from './pages/Search';
 import Analytics from './pages/Analytics'; 
 import Map from './pages/Map'; 
-
+import { propiedades } from './data/propiedades';
 import './App.css'; 
+
+
 
 function App() {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [propiedadSeleccionada, setPropiedadSeleccionada] = useState(null);
   
-  const propiedades = [
-    { id: 1, titulo: 'Casa moderna en el centro', precio: '$250,000', habitaciones: 3, banos: 2, area: '180 m²', ciudad: 'Madrid', imagen: '🏠' },
-    { id: 2, titulo: 'Apartamento con vistas al mar', precio: '$180,000', habitaciones: 2, banos: 1, area: '95 m²', ciudad: 'Barcelona', imagen: '🏢' },
-    { id: 3, titulo: 'Casa rural con jardín', precio: '$320,000', habitaciones: 4, banos: 3, area: '250 m²', ciudad: 'Valencia', imagen: '🌳' },
-    { id: 4, titulo: 'Ático de lujo', precio: '$450,000', habitaciones: 3, banos: 2, area: '160 m²', ciudad: 'Madrid', imagen: '✨' },
-    { id: 5, titulo: 'Casa adosada familiar', precio: '$210,000', habitaciones: 3, banos: 2, area: '140 m²', ciudad: 'Sevilla', imagen: '🏡' },
-    { id: 6, titulo: 'Estudio céntrico', precio: '$120,000', habitaciones: 1, banos: 1, area: '50 m²', ciudad: 'Málaga', imagen: '🏢' }
-  ];
-
+  
   const propiedadesFiltradas = propiedades.filter((prop) => {
     return prop.ciudad.toLowerCase().includes(searchTerm.toLowerCase()) ||
            prop.titulo.toLowerCase().includes(searchTerm.toLowerCase())
