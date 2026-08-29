@@ -41,7 +41,7 @@ export const propiedades = [
   },
   {
     id: 5,
-    titulo: 'Casa adosada familiar',
+    titulo: 'Casa adosada familia',
     precio: 210000,
     habitaciones: 3,
     banos: 2,
@@ -58,5 +58,65 @@ export const propiedades = [
     area: '50 m²',
     ciudad: 'Málaga',
     imagen: '🏢'
+  },
+  {
+    id: 7,
+    titulo: 'Chalet independiente con piscina',
+    precio: 550000,
+    habitaciones: 5,
+    banos: 4,
+    area: '350 m²',
+    ciudad: 'Madrid',
+    imagen: '🏡'
+  },
+  {
+    id: 8,
+    titulo: 'Piso luminoso en el Eixample',
+    precio: 390000,
+    habitaciones: 3,
+    banos: 2,
+    area: '120 m²',
+    ciudad: 'Barcelona',
+    imagen: '🏢'
+  },
+  {
+    id: 9,
+    titulo: 'Casa de pueblo con encanto',
+    precio: 150000,
+    habitaciones: 2,
+    banos: 1,
+    area: '90 m²',
+    ciudad: 'Sevilla',
+    imagen: '🏡'
+  },
+  {
+    id: 10,
+    titulo: 'Apartamento moderno en la playa',
+    precio: 280000,
+    habitaciones: 2,
+    banos: 2,
+    area: '85 m²',
+    ciudad: 'Valencia',
+    imagen: '🏖️'
+  },
+  {
+    id: 11,
+    titulo: 'Villa de lujo con vistas al mar',
+    precio: 750000,
+    habitaciones: 6,
+    banos: 5,
+    area: '450 m²',
+    ciudad: 'Barcelona',
+    imagen: '🏰'
+  },
+  {
+    id: 12,
+    titulo: 'Loft industrial reformado',
+    precio: 190000,
+    habitaciones: 1,
+    banos: 1,
+    area: '70 m²',
+    ciudad: 'Málaga',
+    imagen: '🏭'
   }
 ];
