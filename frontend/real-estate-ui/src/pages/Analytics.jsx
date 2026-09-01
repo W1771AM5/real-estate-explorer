@@ -6,7 +6,50 @@ import {
 import { propiedades } from '../data/propiedades';
 import './Analytics.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5064';
+const PROPERTIES_ENDPOINT = `${API_BASE_URL}/api/properties`;
+
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+});
+
 const Analytics = () => {
+  const [apiProperties, setApiProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function loadProperties() {
+      try {
+        const response = await fetch(PROPERTIES_ENDPOINT, {
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        setApiProperties(data);
+        setError(null);
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          setError(err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProperties();
+
+    return () => controller.abort();
+  }, []);
+
   const dataPorCiudad = propiedades.reduce((acc, prop) => {
     const existing = acc.find(item => item.ciudad === prop.ciudad);
     if (existing) {
@@ -78,6 +121,50 @@ const Analytics = () => {
             </PieChart>
           </ResponsiveContainer>
         </div>
+      </div>
+
+      <div className="chart-card api-properties-card">
+        <h3>Propiedades desde la API</h3>
+
+        {loading && (
+          <div role="status" aria-live="polite">
+            <span className="spinner" aria-hidden="true" />
+            Loading properties…
+          </div>
+        )}
+
+        {error && !loading && (
+          <p role="alert" style={{ color: 'crimson' }}>
+            Could not load properties: {error}
+          </p>
+        )}
+
+        {!loading && !error && apiProperties.length === 0 && (
+          <p>No properties available.</p>
+        )}
+
+        {!loading && !error && apiProperties.length > 0 && (
+          <div className="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>City</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {apiProperties.map((property) => (
+                  <tr key={property.id}>
+                    <td>{property.id}</td>
+                    <td>{property.city}</td>
+                    <td>{currencyFormatter.format(property.price)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );
