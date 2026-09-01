@@ -1,4 +1,4 @@
-import './layout/Footer.css';
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -6,25 +6,25 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <h4>🏠 Real Estate Explorer</h4>
-          <p>Encuentra la propiedad de tus sueños</p>
+          <p>Find the property of your dreams</p>
         </div>
         <div className="footer-section">
-          <h4>Enlaces</h4>
-          <a href="#">Sobre nosotros</a>
-          <a href="#">Contacto</a>
-          <a href="#">Términos y condiciones</a>
+          <h4>Links</h4>
+          <a href="#">About us</a>
+          <a href="#">Contact</a>
+          <a href="#">Terms and conditions</a>
         </div>
         <div className="footer-section">
-          <h4>Síguenos</h4>
+          <h4>Follow us</h4>
           <div className="social-links">
-            <a href="#">📱</a>
-            <a href="#">🐦</a>
-            <a href="#">📘</a>
+            <a href="#" aria-label="Phone">📱</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="Facebook">📘</a>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2025 Real Estate Explorer. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Real Estate Explorer. All rights reserved.</p>
       </div>
     </footer>
   );

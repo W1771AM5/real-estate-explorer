@@ -1,8 +1,16 @@
+import './Map.css';
+
 const Map = () => {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>🗺️ Mapa</h1>
-      <p>Aquí irá el mapa interactivo con las propiedades.</p>
+    <div className="map-container">
+      <h1>🗺️ Map</h1>
+      <div className="map-placeholder">
+        <span className="map-placeholder-icon">🗺️</span>
+        <p className="map-placeholder-title">Interactive map coming soon</p>
+        <p className="map-placeholder-text">
+          A map showing property locations will appear here.
+        </p>
+      </div>
     </div>
   );
 };

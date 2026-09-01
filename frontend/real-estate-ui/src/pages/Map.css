@@ -1,0 +1,38 @@
+.map-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map-container h1 {
+  color: #333;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.map-placeholder {
+  background-color: white;
+  border: 2px dashed #b2bec3;
+  border-radius: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #636e72;
+}
+
+.map-placeholder-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.map-placeholder-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 8px;
+}
+
+.map-placeholder-text {
+  font-size: 1rem;
+  color: #636e72;
+}

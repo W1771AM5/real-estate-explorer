@@ -61,3 +61,7 @@
 .api-properties-card tbody tr:hover {
   background-color: #f9fbff;
 }
+
+.api-error {
+  color: crimson;
+}

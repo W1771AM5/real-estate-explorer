@@ -1,92 +1,43 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { properties } from '../data/properties';
+import Hero from '../components/Hero';
+import PropertyCard from '../components/PropertyCard';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5064';
-const PROPERTIES_ENDPOINT = `${API_BASE_URL}/api/properties`;
+const Home = ({ onSelectProperty }) => {
+  const [searchTerm, setSearchTerm] = useState('');
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  maximumFractionDigits: 0,
-});
-
-function Home() {
-  const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    async function loadProperties() {
-      try {
-        const response = await fetch(PROPERTIES_ENDPOINT, {
-          signal: controller.signal,
-        });
-
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-
-        const data = await response.json();
-        setProperties(data);
-        setError(null);
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          setError(err.message);
-        }
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadProperties();
-
-    return () => controller.abort();
-  }, []);
+  const filteredProperties = properties.filter((property) => {
+    const term = searchTerm.toLowerCase();
+    return property.city.toLowerCase().includes(term) ||
+           property.title.toLowerCase().includes(term);
+  });
 
   return (
-    <section>
-      <h1>Available Properties</h1>
+    <>
+      <Hero searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
-      {loading && (
-        <div role="status" aria-live="polite">
-          <span className="spinner" aria-hidden="true" />
-          Loading properties…
+      <section className="properties-section">
+        <div className="section-header">
+          <h2>🏠 Featured Properties</h2>
+          <p>The best options for you</p>
         </div>
-      )}
 
-      {error && !loading && (
-        <p role="alert" style={{ color: 'crimson' }}>
-          Could not load properties: {error}
-        </p>
-      )}
+        {filteredProperties.length === 0 && (
+          <p className="no-results">No properties found for "{searchTerm}"</p>
+        )}
 
-      {!loading && !error && properties.length === 0 && (
-        <p>No properties available.</p>
-      )}
-
-      {!loading && !error && properties.length > 0 && (
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>City</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {properties.map((property) => (
-              <tr key={property.id}>
-                <td>{property.id}</td>
-                <td>{property.city}</td>
-                <td>{currencyFormatter.format(property.price)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </section>
+        <div className="properties-grid">
+          {filteredProperties.map((property) => (
+            <PropertyCard
+              key={property.id}
+              property={property}
+              onSelect={onSelectProperty}
+            />
+          ))}
+        </div>
+      </section>
+    </>
   );
-}
+};
 
 export default Home;
