@@ -32,3 +32,39 @@ E:\RE-Explorer\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\ref
 E:\RE-Explorer\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.pdb
 E:\RE-Explorer\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.genruntimeconfig.cache
 E:\RE-Explorer\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\ref\RealEstate.Api.dll
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\appsettings.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\RealEstate.Api.staticwebassets.endpoints.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\RealEstate.Api.exe
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\RealEstate.Api.deps.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\RealEstate.Api.runtimeconfig.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\RealEstate.Api.runtimeconfig.dev.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\RealEstate.Api.dll
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\RealEstate.Api.pdb
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.csproj.AssemblyReference.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.AssemblyInfoInputs.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.AssemblyInfo.cs
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.csproj.CoreCompileInputs.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.sourcelink.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\scopedcss\scopedcss.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\scopedcss\bundle\RealEstate.Api.styles.css
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEsta.7BB47796.Up2Date
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.dll
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\refint\RealEstate.Api.dll
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.pdb
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\RealEstate.Api.genruntimeconfig.cache
+C:\Users\willi\OneDrive\Escritorio\Proyectos Para GitHub\real-estate-explorer\backend\RealEstate.Api\obj\Debug\net10.0\ref\RealEstate.Api.dll
