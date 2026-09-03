@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {}
+    "C:\\Users\\willi\\OneDrive\\Escritorio\\Proyectos Para GitHub\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {}
   },
   "projects": {
-    "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {
+    "C:\\Users\\willi\\OneDrive\\Escritorio\\Proyectos Para GitHub\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
+        "projectUniqueName": "C:\\Users\\willi\\OneDrive\\Escritorio\\Proyectos Para GitHub\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
         "projectName": "RealEstate.Api",
-        "projectPath": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
-        "packagesPath": "C:\\Users\\kerwi\\.nuget\\packages\\",
-        "outputPath": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\obj\\",
+        "projectPath": "C:\\Users\\willi\\OneDrive\\Escritorio\\Proyectos Para GitHub\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
+        "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\willi\\OneDrive\\Escritorio\\Proyectos Para GitHub\\real-estate-explorer\\backend\\RealEstate.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "e:\\RE-Explorer\\real-estate-explorer\\NuGet.Config",
-          "C:\\Users\\kerwi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\willi\\OneDrive\\Escritorio\\Proyectos Para GitHub\\real-estate-explorer\\NuGet.Config",
+          "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "11.0.100"
       },
       "frameworks": {
         "net10.0": {
@@ -68,6 +68,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[10.0.10, 10.0.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[10.0.10, 10.0.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[10.0.10, 10.0.10]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[10.0.10, 10.0.10]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -76,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\11.0.100-preview.7.26381.103/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

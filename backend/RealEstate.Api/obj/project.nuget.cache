@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "BlGDJhk53rk=",
+  "dgSpecHash": "RvFe0itsI3s=",
   "success": true,
-  "projectFilePath": "e:\\RE-Explorer\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
+  "projectFilePath": "C:\\Users\\willi\\OneDrive\\Escritorio\\Proyectos Para GitHub\\real-estate-explorer\\backend\\RealEstate.Api\\RealEstate.Api.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kerwi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
-    "C:\\Users\\kerwi\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512"
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.netcore.app.ref\\10.0.10\\microsoft.netcore.app.ref.10.0.10.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\10.0.10\\microsoft.windowsdesktop.app.ref.10.0.10.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\10.0.10\\microsoft.aspnetcore.app.ref.10.0.10.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\10.0.10\\microsoft.netcore.app.host.win-x64.10.0.10.nupkg.sha512"
   ],
   "logs": []
 }

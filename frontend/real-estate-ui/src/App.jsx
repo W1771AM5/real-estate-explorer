@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import Search from './pages/Search';
 import Analytics from './pages/Analytics'; 
+import Dashboard from './pages/Dashboard';
 import Map from './pages/Map'; 
 import { propiedades } from './data/propiedades';
 import './App.css'; 
