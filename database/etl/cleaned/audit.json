@@ -1,0 +1,109 @@
+{
+  "input_file": "database\\NY-House-Dataset.csv",
+  "input_rows": 4801,
+  "final_rows": 4578,
+  "encoding_detected": "ascii (confidence=1.00)",
+  "encoding_used": "utf-8 (fallback)",
+  "fffd_before": 21,
+  "fffd_after": 0,
+  "steps": [
+    {
+      "step": "parse",
+      "rows_in": 0,
+      "rows_out": 4801,
+      "encoding_used": "utf-8"
+    },
+    {
+      "step": "re_quote_brokertitle",
+      "rows_in": 4801,
+      "rows_out": 4801,
+      "rewritten": 6,
+      "weird_rows_fixed": 6
+    },
+    {
+      "step": "blank_sentinels",
+      "sqft": 1615,
+      "bath": 302,
+      "price_overflow": 1,
+      "price_low": 9
+    },
+    {
+      "step": "split_type",
+      "rows_in": 4801,
+      "rows_out": 4801,
+      "unmatched_type_values": [
+        {
+          "value": "1",
+          "count": 2
+        },
+        {
+          "value": "3",
+          "count": 2
+        },
+        {
+          "value": "6",
+          "count": 1
+        },
+        {
+          "value": "2",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "step": "normalize_geo",
+      "rows_in": 4801,
+      "rows_out": 4793,
+      "state_united_states_to_new_york": 1,
+      "admin_area_level_2_blanks": 4763,
+      "outside_bbox": 8
+    },
+    {
+      "step": "recompute_main_address",
+      "rows_in": 4793,
+      "rows_out": 4793
+    },
+    {
+      "step": "clean_street_and_long_name",
+      "rows_in": 4793,
+      "rows_out": 4793,
+      "blanks_street_name": 3837,
+      "blanks_long_name": 1914
+    },
+    {
+      "step": "deduplicate",
+      "rows_in": 4793,
+      "rows_out": 4578,
+      "removed": 215
+    },
+    {
+      "step": "range_validate",
+      "rows_in": 4578,
+      "rows_out": 4578,
+      "violations": {
+        "beds": 11,
+        "bath": 6,
+        "sqft": 0
+      }
+    },
+    {
+      "step": "normalize_brokertitle",
+      "rows_in": 4578,
+      "rows_out": 4578,
+      "changed": 2098,
+      "mojibake_fixed": 3,
+      "mojibake_note": "Source CSV had U+FFFD bytes already present in 5 'Engel & Völkers' titles; replaced with 'ölkers' for readability. Original bytes cannot be recovered."
+    },
+    {
+      "step": "extract_zip",
+      "rows_in": 4578,
+      "rows_out": 4578
+    },
+    {
+      "step": "write_output",
+      "rows_in": 4578,
+      "rows_out": 4578,
+      "path": "database\\etl\\cleaned\\NY-House-Dataset.cleaned.csv"
+    }
+  ]
+}
