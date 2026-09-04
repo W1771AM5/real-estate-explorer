@@ -1,16 +1,54 @@
-import { useState } from 'react';
-import { properties } from '../data/properties';
+import { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import PropertyCard from '../components/PropertyCard';
+import { getProperties } from '../api/properties';
 
-const Home = ({ onSelectProperty }) => {
+const PAGE_SIZE = 24;
+
+function Home({ onSelectProperty }) {
   const [searchTerm, setSearchTerm] = useState('');
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  const filteredProperties = properties.filter((property) => {
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function load() {
+      try {
+        const data = await getProperties({ take: 200, signal: controller.signal });
+        setProperties(data);
+        setError(null);
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          setError(err.message);
+        }
+      } finally {
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
+      }
+    }
+
+    load();
+    return () => controller.abort();
+  }, []);
+
+  const filtered = properties.filter((p) => {
+    if (!searchTerm) return true;
     const term = searchTerm.toLowerCase();
-    return property.city.toLowerCase().includes(term) ||
-           property.title.toLowerCase().includes(term);
+    return (
+      (p.brokerTitle ?? '').toLowerCase().includes(term) ||
+      (p.address ?? '').toLowerCase().includes(term) ||
+      (p.locality ?? '').toLowerCase().includes(term) ||
+      (p.sublocality ?? '').toLowerCase().includes(term) ||
+      (p.zip ?? '').toLowerCase().includes(term)
+    );
   });
+
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visible.length < filtered.length;
 
   return (
     <>
@@ -22,12 +60,25 @@ const Home = ({ onSelectProperty }) => {
           <p>The best options for you</p>
         </div>
 
-        {filteredProperties.length === 0 && (
+        {loading && (
+          <div role="status" aria-live="polite">
+            <span className="spinner" aria-hidden="true" />
+            Loading properties…
+          </div>
+        )}
+
+        {error && !loading && (
+          <p role="alert" className="api-error">
+            Could not load properties: {error}
+          </p>
+        )}
+
+        {!loading && !error && filtered.length === 0 && (
           <p className="no-results">No properties found for "{searchTerm}"</p>
         )}
 
         <div className="properties-grid">
-          {filteredProperties.map((property) => (
+          {visible.map((property) => (
             <PropertyCard
               key={property.id}
               property={property}
@@ -35,9 +86,20 @@ const Home = ({ onSelectProperty }) => {
             />
           ))}
         </div>
+
+        {hasMore && (
+          <div className="load-more">
+            <button
+              type="button"
+              onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+            >
+              Load more ({filtered.length - visible.length} remaining)
+            </button>
+          </div>
+        )}
       </section>
     </>
   );
-};
+}
 
 export default Home;

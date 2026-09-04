@@ -1,22 +1,61 @@
-import { useState } from 'react';
-import { properties } from '../data/properties';
+import { useEffect, useMemo, useState } from 'react';
 import PropertyCard from '../components/PropertyCard';
+import { getProperties } from '../api/properties';
 import './Search.css';
 
-const Search = ({ onSelectProperty }) => {
+function Search({ onSelectProperty }) {
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [city, setCity] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [bedrooms, setBedrooms] = useState('');
 
-  const cities = [...new Set(properties.map((property) => property.city))];
+  useEffect(() => {
+    const controller = new AbortController();
 
-  const results = properties.filter((property) => {
-    const matchesCity = city ? property.city === city : true;
-    const matchesPrice = maxPrice ? property.price <= Number(maxPrice) : true;
-    const matchesBedrooms = bedrooms ? property.bedrooms >= Number(bedrooms) : true;
+    async function load() {
+      try {
+        const data = await getProperties({ take: 1000, signal: controller.signal });
+        setProperties(data);
+        setError(null);
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          setError(err.message);
+        }
+      } finally {
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
+      }
+    }
 
-    return matchesCity && matchesPrice && matchesBedrooms;
-  });
+    load();
+    return () => controller.abort();
+  }, []);
+
+  const cities = useMemo(() => {
+    const set = new Set();
+    for (const p of properties) {
+      if (p.locality) set.add(p.locality);
+    }
+    return [...set].sort();
+  }, [properties]);
+
+  const results = useMemo(() => {
+    return properties.filter((property) => {
+      const matchesCity = city ? property.locality === city : true;
+      const matchesPrice = maxPrice
+        ? property.price != null && property.price <= Number(maxPrice)
+        : true;
+      const matchesBedrooms = bedrooms
+        ? property.beds != null && property.beds >= Number(bedrooms)
+        : true;
+
+      return matchesCity && matchesPrice && matchesBedrooms;
+    });
+  }, [properties, city, maxPrice, bedrooms]);
 
   return (
     <div className="search-container">
@@ -38,7 +77,7 @@ const Search = ({ onSelectProperty }) => {
           <input
             id="price-filter"
             type="number"
-            placeholder="e.g. 300000"
+            placeholder="e.g. 1000000"
             value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
           />
@@ -57,9 +96,15 @@ const Search = ({ onSelectProperty }) => {
       </div>
 
       <div className="search-results">
-        <h2>Results: {results.length} properties</h2>
+        <h2>Results: {loading ? '…' : `${results.length} properties`}</h2>
 
-        {results.length === 0 && (
+        {error && !loading && (
+          <p role="alert" className="api-error">
+            Could not load properties: {error}
+          </p>
+        )}
+
+        {!loading && !error && results.length === 0 && (
           <p className="no-results">No properties match those filters. Try different criteria.</p>
         )}
 
@@ -75,6 +120,6 @@ const Search = ({ onSelectProperty }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Search;

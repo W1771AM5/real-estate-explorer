@@ -18,6 +18,11 @@ function PropertyDetailsModal({ property, onClose }) {
 
   if (!property) return null;
 
+  const title = property.brokerTitle || property.address || 'Property';
+  const areaText = property.propertySqft ? `${property.propertySqft.toLocaleString()} sqft` : '—';
+  const cityText = [property.sublocality, property.locality].filter(Boolean).join(', ');
+  const zipText = property.zip ? ` ${property.zip}` : '';
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -26,28 +31,35 @@ function PropertyDetailsModal({ property, onClose }) {
         </button>
 
         <div className="modal-image">
-          <span className="property-icon-large">{property.image}</span>
+          <span className="property-icon-large" aria-hidden="true">🏠</span>
         </div>
 
-        <h2>{property.title}</h2>
-        <p className="modal-price">{currencyFormatter.format(property.price)}</p>
+        <h2>{title}</h2>
+        <p className="modal-price">{currencyFormatter.format(property.price ?? 0)}</p>
+        <p className="modal-status">
+          <span className="status-badge">{property.listingStatus ?? '—'}</span>
+          {property.propertyType && (
+            <span className="status-badge type">{property.propertyType}</span>
+          )}
+        </p>
 
         <div className="modal-details">
           <div className="detail-item">
             <span>🛏️ Bedrooms</span>
-            <strong>{property.bedrooms}</strong>
+            <strong>{property.beds ?? '—'}</strong>
           </div>
           <div className="detail-item">
             <span>🛁 Bathrooms</span>
-            <strong>{property.bathrooms}</strong>
+            <strong>{property.baths ?? '—'}</strong>
           </div>
           <div className="detail-item">
             <span>📐 Area</span>
-            <strong>{property.area}</strong>
+            <strong>{areaText}</strong>
           </div>
         </div>
 
-        <p className="modal-location">📍 {property.city}</p>
+        <p className="modal-location">📍 {property.address}</p>
+        <p className="modal-location-secondary">{cityText}{zipText}</p>
 
         <button className="contact-button">Contact agent</button>
       </div>
